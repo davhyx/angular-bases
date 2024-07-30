@@ -1,0 +1,15 @@
+<h2>Detalle del Heroe</h2>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ name }}</dd>
+
+  <td>Edad:</td>
+  <dd>{{ age }}</dd>
+
+  <td>Descripción:</td>
+  <dd>{{ getHeroDesc() }}</dd>
+</dl>
+
+<button class="btn btn-primary mx-4" (click)="changeName()">Cambiar nombre</button>
+<button class="btn btn-primary" (click)="changeAge()">Cambiar edad</button>
