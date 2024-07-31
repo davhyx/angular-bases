@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
-import { CountersModule } from './components/counters/counters.module';
-import { HeroesModule } from './components/heroes/heroes.module';
+import { CountersModule } from './counters/counters.module';
+import { HeroesModule } from './heroes/heroes.module';
 
 import { AppComponent } from './app.component';
 
