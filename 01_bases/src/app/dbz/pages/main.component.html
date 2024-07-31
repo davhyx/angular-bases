@@ -3,20 +3,9 @@
 
 <div class="row">
     <div class="col">
-        <h2>Listado</h2>
-        <ul class="list-group">
-            <li class="list-group-item">Krillin - 500</li>
-            <li class="list-group-item">Goku - 10.000</li>
-        </ul>
+        <dbz-list [characters]="this.characters"></dbz-list>
     </div>
     <div class="col">
-        <h2>Agregar personaje</h2>
-        <form class="form">
-            <input class="form-control mb-2" type="text" placeholder="Nombre">
-            <input class="form-control mb-2" type="number" placeholder="Poder">
-            <button type="submit" class="btn btn-primary">
-                Añadir
-            </button>
-        </form>
+        <dbz-addchar></dbz-addchar>
     </div>
 </div>
