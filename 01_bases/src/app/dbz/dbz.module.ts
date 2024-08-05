@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { MainDBZComponent } from './pages/main.component';
 import { ListDBZComponent } from './components/list/list.component';
 import { AddCharDBZComponent } from './components/add-char/add-char.component';
@@ -16,7 +18,8 @@ import { AddCharDBZComponent } from './components/add-char/add-char.component';
     MainDBZComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class DbzModule { }
