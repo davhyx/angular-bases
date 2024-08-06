@@ -12,13 +12,10 @@ export class ListDBZComponent {
     public characters: Character[] = [];
 
     @Output()
-    public onDeleteOneCharacter: EventEmitter<number> = new EventEmitter();
+    public onListRemoveCharacter: EventEmitter<string> = new EventEmitter();
 
-    onDeleteIDCharacter(id:number) {
-        this.onDeleteOneCharacter.emit(id);
+    onListRemove(id:string) {
+        this.onListRemoveCharacter.emit(id);
     }
 
-    onDeleteCharacter(i:number):void {
-        console.log(i);        
-    }
 }

@@ -9,17 +9,17 @@ import { Character } from '../../interfaces/character.interface';
 export class AddCharDBZComponent {
 
     @Output()
-    public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+    public onFormAddCharacter: EventEmitter<Character> = new EventEmitter();
 
     public character: Character = {
-        id: 0,
+        id: '',
         name: '',
         power: 0
     };
 
     sendCharacter():void {
         if( this.character.name.length <= 2 ) return;
-        this.onNewCharacter.emit({...this.character});
-        this.character = { id: 0, name: '', power: 0 };
+        this.onFormAddCharacter.emit({...this.character});
+        this.character = { id: '', name: '', power: 0 };
     }
 }
