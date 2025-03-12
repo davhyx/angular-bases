@@ -1,0 +1,29 @@
+<h1 class="text-2xl font-bold pt-5 pb-5">
+    Pipes númericos incluidos en Angular
+</h1>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow">
+    <div class="stat">
+      <div class="stat-title">Number:'1.2-2' (parámetros de mostreo)</div>
+      <div class="stat-value">{{ totalSells() | number:'1.2-2' }}</div>
+      <div class="stat-desc">{{ totalSells() }}</div>
+    </div>
+  
+    <div class="stat">
+        <div class="stat-title">Number modificado</div>
+        <div class="stat-value">{{ totalSells() + 1000000 | number:'1.2-2' }}</div>
+        <div class="stat-desc">{{ totalSells() }}</div>
+    </div>
+
+    <div class="stat">
+        <div class="stat-title">Currency en dolar canadiense</div>
+        <div class="stat-value">{{ totalSells() | currency:'CAD':true:'1.3-3':'en-US' }}</div>
+        <div class="stat-desc">{{ totalSells() }}</div>
+    </div>
+
+    <div class="stat">
+        <div class="stat-title">Percent</div>
+        <div class="stat-value">{{ percent() | percent:'1.2-2' }}</div>
+        <div class="stat-desc">{{ percent() }}</div>
+    </div>    
+</div>
