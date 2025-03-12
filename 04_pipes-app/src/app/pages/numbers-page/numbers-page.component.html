@@ -16,14 +16,20 @@
     </div>
 
     <div class="stat">
-        <div class="stat-title">Currency en dolar canadiense</div>
-        <div class="stat-value">{{ totalSells() | currency:'CAD':true:'1.3-3':'en-US' }}</div>
-        <div class="stat-desc">{{ totalSells() }}</div>
-    </div>
-
-    <div class="stat">
         <div class="stat-title">Percent</div>
         <div class="stat-value">{{ percent() | percent:'1.2-2' }}</div>
         <div class="stat-desc">{{ percent() }}</div>
     </div>    
+</div>
+<div class="stats stats-vertical lg:stats-horizontal shadow">
+    <div class="stat">
+        <div class="stat-title">Currency en dolar canadiense</div>
+        <div class="stat-value">{{ totalSells() | currency:'CAD':true:'1.3-3':'en-US' }}</div>
+        <div class="stat-desc">{{ totalSells() }}</div>
+    </div>
+    <div class="stat">
+        <div class="stat-title">Currency en euro</div>
+        <div class="stat-value">{{ totalSells() | currency:'EUR':true:'1.3-3':'es' }}</div>
+        <div class="stat-desc">{{ totalSells() }}</div>
+    </div>
 </div>
