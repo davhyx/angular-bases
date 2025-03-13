@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CardComponent } from "../../components/card/card.component";
-import { I18nPluralPipe, I18nSelectPipe } from '@angular/common';
+import { AsyncPipe, I18nPluralPipe, I18nSelectPipe } from '@angular/common';
+import { interval, map, tap } from 'rxjs';
 
 const client1 = {
   name: 'David',
@@ -19,7 +20,7 @@ const client2 = {
 @Component({
   selector: 'app-uncommon-page',
   standalone: true,
-  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe],
+  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe, AsyncPipe],
   templateUrl: './uncommon-page.component.html',
   styleUrl: './uncommon-page.component.css'
 })
@@ -46,15 +47,26 @@ export class UncommonPageComponent {
     'Carlos',
     'Marta'
   ])
-
   clientsMap = signal({
     '=0': 'No hay clientes esperando',
     '=1': 'Hay un cliente esperando',
     'other': 'Actualmente hay # clientes esperando'
   })
-
   deleteClient() {
     this.clients.update((prev) => prev.slice(1));
   }
+
+  // Async Pipe
+  promiseValue: Promise<string> = new Promise((resolve, reject) => {
+    setTimeout( () => {
+      resolve('Tenemos data en la promesa');
+      console.log('Promesa fin');
+    }, 3500);
+  })
+
+  myObservableTimer = interval(3500).pipe(
+    map((value) => value + 1),
+    tap((value) => console.log('tap:', value))
+  )
 
 }
