@@ -1,0 +1,13 @@
+<h1 class="text-2xl font-bold pt-5 pb-5">
+    Pipe personalizada (no incluida en Angular)
+</h1>
+
+<h2>Cambio de formato en texto</h2>
+<div class="stats stats-vertical lg:stats-horizontal shadow">
+    <div class="stat">
+      <div class="stat-title">ToggleCasePipe - custom Pipe</div>
+      <div class="stat-value">{{ name() | toggleCase : toggleCaseStat() }}</div>
+      <div class="stat-desc">{{ name() }}</div>
+    </div>
+    <button (click)="toggleCase()" class="btn btn-secondary">Toggle Text</button>
+</div>
