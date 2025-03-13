@@ -3,10 +3,13 @@
 </h1>
 
 <h2>Textos</h2>
-<div class="gri grids-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-5">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-5">
     <app-card
         title="i18nSelectPipe"
     >
-        Contenido del padre
+        <p>Saludos {{ client().name }}, es un placer {{ client().gender | i18nSelect:invitationMap}} a nuestro evento.</p>
+        <button (click)="changeClient()" class="btn btn-secondary">
+            Cambiar de cliente
+        </button>
     </app-card>
 </div>
